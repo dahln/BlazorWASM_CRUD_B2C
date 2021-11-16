@@ -4,6 +4,8 @@ This project is a demo of how to build a .NET web application, using Blazor WASM
 ### Setup:
 Clone the repo. To run the application, you need to run both the API and the Blazor app. If you have a cors issue, ensure the port used in Startup.cs is the same as the port the client app is running on.
 
+The Azure B2C settings are set in the appSettings.json files. This public repo does not include those values - set those values using your specific Azure B2C values/id's.
+
 ### DB Migration Commands:
 Add-Migration -Project BlazorWASM_CRUD_B2C.Data -StartupProject BlazorWASM_CRUD_B2C.API -Name InitialCreate
 
