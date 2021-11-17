@@ -57,7 +57,7 @@ namespace BlazorWASM_CRUD_B2C.API
             {
                 opt.AddPolicy(name: corsName, builder =>
                 {
-                    builder.WithOrigins(Configuration.GetSection("Cors").ToString())
+                    builder.WithOrigins(Configuration.GetSection("Cors").Value)
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials();
