@@ -342,3 +342,5 @@ healthchecksdb
 
 # Ignore SQLite DB Files
 *.db
+*.db-shm
+*.db-wal
