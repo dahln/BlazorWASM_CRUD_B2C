@@ -7,7 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
-using Microsoft.OpenApi.Models;
 using System.Linq;
 using System.Security.Claims;
 using BlazorWASM_CRUD_B2C.API.Utility;
@@ -37,7 +36,6 @@ namespace BlazorWASM_CRUD_B2C.API
 
             /* 
             Preference is to use MSSQL. SQLite is used for demo purposes.
-            If you deploy this application with
             If MSSQL replaces SQLite - Migrations will not be compatible, delete migrations and start over from that point.
             Also, if MSSQL is used, include a connecting string appsettings.
             */
@@ -48,10 +46,6 @@ namespace BlazorWASM_CRUD_B2C.API
             services.AddScoped<CustomerService>();
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BlazorWASM_CRUD_B2C.API", Version = "v1" });
-            });
 
             services.AddCors(opt =>
             {
@@ -79,8 +73,6 @@ namespace BlazorWASM_CRUD_B2C.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BlazorWASM_CRUD_B2C.API v1"));
             }
 
             app.UseHttpsRedirection();

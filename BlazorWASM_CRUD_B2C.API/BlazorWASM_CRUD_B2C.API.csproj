@@ -24,10 +24,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\BlazorWASM_CRUD_B2C.Service\BlazorWASM_CRUD_B2C.Service.csproj" />
 	</ItemGroup>
 
