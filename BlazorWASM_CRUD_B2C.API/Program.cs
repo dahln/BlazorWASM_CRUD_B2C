@@ -12,7 +12,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<DBContext>(options =>
-    options.UseSqlite($"Data Source=dotnetBUILT_BlazorWASM_CRUD_B2C.db"));
+    options.UseSqlite($"Data Source=BlazorWASM_CRUD_B2C.db"));
     //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     // ^^^ use this option for MSSQL instead of Sqlite ^^^
     // If MSSQL is used, remove 'UseSqlite'
