@@ -38,12 +38,17 @@ builder.Services.AddCors(opt =>
 var app = builder.Build();
 
 //Check for and automatically apply pending migrations
-var db = app.Services.GetService<DbContext>();
-if (db != null)
+using (var scope = app.Services.CreateScope())
 {
-    var migrations = db.Database.GetPendingMigrations();
-    if (migrations.Count() > 0)
-        db.Database.Migrate();
+    var services = scope.ServiceProvider;
+
+    var db = services.GetRequiredService<DBContext>();
+    if (db != null)
+    {
+        var migrations = db.Database.GetPendingMigrations();
+        if (migrations.Any())
+            db.Database.Migrate();
+    }
 }
 
 app.UseCors(corsName);
