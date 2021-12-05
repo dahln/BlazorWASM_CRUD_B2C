@@ -26,7 +26,7 @@ builder.Services.AddCors(opt =>
 {
     opt.AddPolicy(name: corsName, policy =>
     {
-        policy.WithOrigins(builder.Configuration.GetSection("Cors").Value)
+        policy.WithOrigins(builder.Configuration.GetSection("Cors").Value.Split(","))
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
