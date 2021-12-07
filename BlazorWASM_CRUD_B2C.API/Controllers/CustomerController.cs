@@ -121,5 +121,13 @@ namespace BlazorWASM_CRUD_B2C.API.Controllers
 
             return Ok();
         }
+
+
+        [HttpGet]
+        [Route("api/v1/ping")]
+        public IActionResult Ping()
+        {
+            return Ok("Received...");
+        }
     }//End Controller
 }
