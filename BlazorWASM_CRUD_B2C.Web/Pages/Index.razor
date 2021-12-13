@@ -2,9 +2,11 @@
 
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Configuration
 
 @inject BlazorWASM_CRUD_B2C.Web.Services.API API
 @inject IModalService _modalService
+@inject IConfiguration _config
 
 <AuthorizeView>
     <Authorized>
@@ -38,6 +40,9 @@
             For documentation, see the Readme at GitHub.
         </p>
     </div>
+</div>
+<div class="row">
+    <h5>API: @(_config.GetValue<string>("API_URL"))</h5>
 </div>
 <div class="row">
     <div class="col-lg-3 mx-auto">
