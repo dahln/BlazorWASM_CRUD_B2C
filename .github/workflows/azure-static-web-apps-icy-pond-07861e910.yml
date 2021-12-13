@@ -40,11 +40,6 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "wwwroot" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: .net-client-app
-          path: ${{env.DOTNET_ROOT}}/BlazorWASM_CRUD_B2C.Web
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
