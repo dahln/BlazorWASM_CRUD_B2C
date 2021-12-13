@@ -2,11 +2,9 @@
 
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Authorization
-@using Microsoft.Extensions.Configuration
 
 @inject BlazorWASM_CRUD_B2C.Web.Services.API API
 @inject IModalService _modalService
-@inject IConfiguration _config
 
 <AuthorizeView>
     <Authorized>
@@ -40,13 +38,6 @@
             For documentation, see the Readme at GitHub.
         </p>
     </div>
-</div>
-<div class="row">
-    <h5>API: @(_config.GetValue<string>("API_URL"))</h5>
-    <h5>AzureAdB2c.Authority: @(_config.GetSection("AzureAdB2C").GetValue<string>("Authority"))</h5>
-    <h5>AzureAdB2c.ClientId: @(_config.GetSection("AzureAdB2C").GetValue<string>("ClientId"))</h5>
-    <h5>AzureAdB2c.ValidateAuthority: @(_config.GetSection("AzureAdB2C").GetValue<string>("ValidateAuthority"))</h5>
-    <h5>AzureAdB2c.ValidateAuthority_Boolean: @(_config.GetSection("AzureAdB2C").GetValue<bool>("ValidateAuthority"))</h5>
 </div>
 <div class="row">
     <div class="col-lg-3 mx-auto">

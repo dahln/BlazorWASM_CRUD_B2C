@@ -38,7 +38,6 @@ builder.Services.AddMsalAuthentication(options =>
 
 builder.Services.AddScoped<API>();
 builder.Services.AddScoped<SpinnerService>();
-builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddBlazoredToast();
