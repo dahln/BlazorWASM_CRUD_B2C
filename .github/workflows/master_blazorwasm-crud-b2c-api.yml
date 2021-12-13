@@ -39,7 +39,7 @@ jobs:
           AzureAdB2C.Domain: ${{ secrets.AZUREADB2C_DOMAIN }}
           AzureAdB2C.Instance: ${{ secrets.AZUREADB2C_INSTANCE }}
           AzureAdB2C.SignUpSignInPolicyId: ${{ secrets.AZUREADB2C_SIGNUPSIGNINPOLICYID }}
-          CORS: ${{ secrets.CORS }}
+          Cors: ${{ secrets.CORS }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
