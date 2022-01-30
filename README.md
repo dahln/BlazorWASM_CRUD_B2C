@@ -1,3 +1,8 @@
+[![API CI/CD](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/master_blazorwasm-crud-b2c-api.yml/badge.svg)](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/master_blazorwasm-crud-b2c-api.yml)
+
+[![Web Apps CI/CD](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/azure-static-web-apps-salmon-bush-017f78810.yml/badge.svg)](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/azure-static-web-apps-salmon-bush-017f78810.yml)
+
+
 # BlazorWASM_CRUD_B2C
 This project is a demo of how to build a .NET web application, using Blazor WASM which consumes an API. The client app (blazor), is separate from the API app. Cors is used to authorize the client. Both applications use Azure B2C for authentication/authorization. On the initial startup of the application, be sure the DB is correctly created. You will need MSSQL Server installed (I use MSSQL Developer Edition). Assuming the connection string is correct in appSettings.json, the application should create the DB on startup.
 
