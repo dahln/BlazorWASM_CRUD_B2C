@@ -23,10 +23,23 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build BlazorWASM_CRUD_B2C.API --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish BlazorWASM_CRUD_B2C.API -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+    #substitute production appsettings entries to appsettings json file
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
+        env:
+          ConnectionStrings.DefaultConnection: ${{ secrets.ConnectionString }}
+          AzureAdB2C.ClientId: ${{ secrets.AZUREADB2C_CLIENTID }}
+          AzureAdB2C.Domain: ${{ secrets.AZUREADB2C_DOMAIN }}
+          AzureAdB2C.Instance: ${{ secrets.AZUREADB2C_INSTANCE }}
+          AzureAdB2C.SignUpSignInPolicyId: ${{ secrets.AZUREADB2C_SIGNUPSIGNINPOLICYID }}
+          Cors: ${{ secrets.CORS }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2

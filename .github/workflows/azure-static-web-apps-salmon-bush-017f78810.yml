@@ -17,7 +17,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true
+          submodules: true          
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: '**/*/appsettings.json'
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          Scope: ${{ secrets.SCOPE }}
+          AzureAdB2C.Authority: ${{ secrets.AZUREADB2C_ClIENT_AUTHORITY }}
+          AzureAdB2C.ClientId: ${{ secrets.AZUREADB2C_CLIENT_CLIENTID }}
+          AzureAdB2C.ValidateAuthority: ${{ secrets.AZUREADB2C_CLIENT_VALIDATEAUTHORITY }}
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
