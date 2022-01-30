@@ -1,6 +1,4 @@
-[![API CI/CD](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/master_blazorwasm-crud-b2c-api.yml/badge.svg)](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/master_blazorwasm-crud-b2c-api.yml)
-
-[![Web Apps CI/CD](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/azure-static-web-apps-salmon-bush-017f78810.yml/badge.svg)](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/azure-static-web-apps-salmon-bush-017f78810.yml)
+[![API CI/CD](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/master_blazorwasm-crud-b2c-api.yml/badge.svg)](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/master_blazorwasm-crud-b2c-api.yml) [![Web Apps CI/CD](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/azure-static-web-apps-salmon-bush-017f78810.yml/badge.svg)](https://github.com/dahln/BlazorWASM_CRUD_B2C/actions/workflows/azure-static-web-apps-salmon-bush-017f78810.yml)
 
 
 # BlazorWASM_CRUD_B2C
